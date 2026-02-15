@@ -1,9 +1,17 @@
-// Mega Menu Data for Navigation
-
+import React from 'react';
 import { Zap, Settings, Package, Wrench, Box, Cog } from 'lucide-react';
-import { SERVICES, PRODUCTS } from './constants';
+import { SERVICES } from '@/lib/constants';
 
-export const SERVICES_MEGA_MENU = SERVICES.map(service => ({
+interface ServiceItem {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  image: string;
+  features: string[];
+}
+
+export const SERVICES_MEGA_MENU = (SERVICES as ServiceItem[]).map(service => ({
     title: service.title,
     description: service.description,
     href: `/services#${service.id}`,
