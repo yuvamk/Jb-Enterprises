@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* JB Enterprise Color Palette - Industrial Modern */
+  --navy-dark: #0A1628;
+  --navy-medium: #1E293B;
+  --steel-grey: #64748B;
+  --steel-light: #94A3B8;
+  --electric-blue: #0EA5E9;
+  --blue-light: #38BDF8;
+  --white: #FFFFFF;
+  --off-white: #F8FAFC;
+
+  /* Accent Colors - Competitor Inspired */
+  --industrial-orange: #F37021;
+  --warm-amber: #F59E0B;
+  --orange-light: #FB923C;
+
+  /* Semantic Colors */
+  --background: var(--off-white);
+  --foreground: var(--navy-dark);
+  --primary: var(--electric-blue);
+  --secondary: var(--steel-grey);
+  --accent: var(--industrial-orange);
+
+  /* Spacing Scale */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+}
+
+@theme inline {
+  /* Colors */
+  --color-navy-dark: var(--navy-dark);
+  --color-navy-medium: var(--navy-medium);
+  --color-steel-grey: var(--steel-grey);
+  --color-steel-light: var(--steel-light);
+  --color-electric-blue: var(--electric-blue);
+  --color-blue-light: var(--blue-light);
+  --color-off-white: var(--off-white);
+
+  /* Accent Colors */
+  --color-industrial-orange: var(--industrial-orange);
+  --color-warm-amber: var(--warm-amber);
+  --color-orange-light: var(--orange-light);
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  /* Custom Animations */
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.6s ease-out;
+  --animate-slide-in-left: slide-in-left 0.6s ease-out;
+  --animate-slide-in-right: slide-in-right 0.6s ease-out;
+  --animate-scale-in: scale-in 0.4s ease-out;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body Styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Utility Classes */
+.container-custom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--off-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--steel-grey);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--navy-medium);
+}
+
+/* Circular Stat Backgrounds - Triveni Inspired */
+.stat-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--industrial-orange), var(--warm-amber));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  box-shadow: 0 10px 30px rgba(243, 112, 33, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-circle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(243, 112, 33, 0.4);
+}
+
+/* Serif Typography Utility */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.hero-tagline {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Orange Accent Utilities */
+.text-orange {
+  color: var(--industrial-orange);
+}
+
+.bg-orange {
+  background-color: var(--industrial-orange);
+}
+
+.border-orange {
+  border-color: var(--industrial-orange);
+}
+
+.hover\:bg-orange:hover {
+  background-color: var(--industrial-orange);
+}
+
+.hover\:text-orange:hover {
+  color: var(--industrial-orange);
+}
