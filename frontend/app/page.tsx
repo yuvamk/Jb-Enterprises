@@ -3,6 +3,7 @@ import AboutSection from "@/components/home/AboutSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import ProjectsSection from "@/components/home/ProjectsSection";
 import ClientsSection from "@/components/home/ClientsSection";
+import BlogSection from "@/components/home/BlogSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CertificationsSection from "@/components/home/CertificationsSection";
@@ -23,6 +24,7 @@ export default function Home() {
       <ClientsSection />
       <WhyChooseUs />
       <TestimonialsSection />
+      <BlogSection />
       <CertificationsSection />
       <ContactSection />
     </main>

@@ -16,9 +16,10 @@ interface MegaMenuProps {
   label: string;
   items: MegaMenuItem[];
   columns?: 1 | 2 | 3;
+  dark?: boolean;
 }
 
-export function MegaMenu({ label, items, columns = 2 }: MegaMenuProps) {
+export function MegaMenu({ label, items, columns = 2, dark = false }: MegaMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -29,7 +30,9 @@ export function MegaMenu({ label, items, columns = 2 }: MegaMenuProps) {
     >
       {/* Trigger Button */}
       <button
-        className="flex items-center gap-1 text-sm font-medium text-navy-dark hover:text-electric-blue transition-colors duration-200 py-2"
+        className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 py-2 ${
+          dark ? 'text-white hover:text-industrial-orange' : 'text-navy-dark hover:text-industrial-orange'
+        }`}
       >
         {label}
         <motion.div

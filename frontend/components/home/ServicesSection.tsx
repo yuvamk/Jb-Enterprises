@@ -37,14 +37,22 @@ export default function ServicesSection() {
           variants={staggerContainer}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
-          {SERVICES.map((service) => (
-            <RevealOnScroll key={service.id} variant="slideUp">
-              <Card className="h-full flex flex-col">
-                <CardContent className="flex-1">
-                  <div className="w-16 h-16 bg-electric-blue/10 rounded-lg flex items-center justify-center mb-6 text-electric-blue">
+          {SERVICES.map((service, index) => (
+            <RevealOnScroll key={service.id} variant="slideUp" delay={index * 0.1}>
+              <Card className="h-full flex flex-col group">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image || "/images/services/power-plant-services.png"} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-navy-dark/20 group-hover:bg-navy-dark/0 transition-colors duration-500" />
+                  <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-lg flex items-center justify-center text-electric-blue shadow-lg">
                     {iconMap[service.icon]}
                   </div>
-                  <h3 className="text-xl font-bold text-navy-dark mb-3">
+                </div>
+                <CardContent className="flex-1">
+                  <h3 className="text-xl font-bold text-navy-dark mb-3 group-hover:text-industrial-orange transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-steel-grey mb-4">{service.description}</p>

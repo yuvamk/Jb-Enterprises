@@ -12,23 +12,31 @@ export default function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   return (
     <RevealOnScroll variant="slideUp">
       <div className="bg-white rounded-xl shadow-lg border border-steel-light/20 overflow-hidden hover:shadow-2xl transition-all duration-300">
-        {/* Header */}
-        <div className="bg-gradient-to-br from-navy-dark to-navy-medium p-6 text-white">
-          <div className="flex items-start justify-between mb-3">
-            <h3 className="text-2xl font-bold flex-1">{caseStudy.title}</h3>
+        {/* Image */}
+        <div className="relative h-64 overflow-hidden">
+          <img 
+            src={caseStudy.image} 
+            alt={caseStudy.title} 
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-transparent to-transparent opacity-80" />
+          <div className="absolute bottom-6 left-6 right-6 text-white">
+            <h3 className="text-2xl font-bold leading-tight">{caseStudy.title}</h3>
           </div>
-          <div className="flex items-center gap-4 text-sm text-off-white/80">
-            <div className="flex items-center gap-1">
-              <Clock className="w-4 h-4" />
-              <span>{caseStudy.duration}</span>
+        </div>
+
+        {/* Info Bar */}
+        <div className="bg-navy-dark px-6 py-4 flex items-center gap-6 text-sm text-off-white/80 border-b border-white/5">
+          <div className="flex items-center gap-2">
+            <Clock className="w-4 h-4 text-industrial-orange" />
+            <span>{caseStudy.duration}</span>
+          </div>
+          {caseStudy.projectValue && (
+            <div className="flex items-center gap-2">
+              <DollarSign className="w-4 h-4 text-industrial-orange" />
+              <span>{caseStudy.projectValue}</span>
             </div>
-            {caseStudy.projectValue && (
-              <div className="flex items-center gap-1">
-                <DollarSign className="w-4 h-4" />
-                <span>{caseStudy.projectValue}</span>
-              </div>
-            )}
-          </div>
+          )}
         </div>
 
         {/* Content */}

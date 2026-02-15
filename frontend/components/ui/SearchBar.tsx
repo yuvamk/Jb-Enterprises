@@ -14,7 +14,11 @@ interface SearchResult {
   category?: string;
 }
 
-export default function SearchBar() {
+interface SearchBarProps {
+  dark?: boolean;
+}
+
+export default function SearchBar({ dark = false }: SearchBarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -101,12 +105,16 @@ export default function SearchBar() {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="flex items-center gap-2 px-4 py-2 text-steel-grey hover:text-navy-dark transition-colors duration-300"
+        className={`flex items-center gap-2 px-4 py-2 transition-colors duration-300 ${
+          dark ? 'text-white/80 hover:text-white' : 'text-steel-grey hover:text-navy-dark'
+        }`}
         aria-label="Open search"
       >
         <Search className="w-5 h-5" />
         <span className="hidden md:inline text-sm">Search</span>
-        <kbd className="hidden md:inline px-2 py-1 text-xs bg-off-white border border-steel-light rounded">
+        <kbd className={`hidden md:inline px-2 py-1 text-xs border rounded ${
+          dark ? 'bg-white/10 border-white/20 text-white/60' : 'bg-off-white border-steel-light text-steel-grey'
+        }`}>
           ⌘K
         </kbd>
       </button>

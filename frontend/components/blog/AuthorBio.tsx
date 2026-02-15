@@ -17,8 +17,12 @@ export default function AuthorBio({ author }: AuthorBioProps) {
     <div className="bg-gradient-to-br from-off-white to-white rounded-xl p-6 border border-steel-light/20">
       <h3 className="font-bold text-navy-dark mb-4">About the Author</h3>
       <div className="flex items-start gap-4">
-        <div className="w-16 h-16 bg-gradient-to-br from-industrial-orange to-warm-amber rounded-full flex items-center justify-center text-white flex-shrink-0">
-          <User className="w-8 h-8" />
+        <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-industrial-orange/20">
+          <img
+            src={author.avatar}
+            alt={author.name}
+            className="w-full h-full object-cover"
+          />
         </div>
         <div>
           <div className="font-bold text-lg text-navy-dark">{author.name}</div>

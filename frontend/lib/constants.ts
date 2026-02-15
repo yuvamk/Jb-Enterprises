@@ -26,6 +26,7 @@ export const SERVICES = [
         description:
             'Delivering comprehensive solutions to optimize power plant efficiency and reliability.',
         icon: 'Zap',
+        image: '/images/services/power-plant-services.png',
         features: [
             'Performance optimization',
             'Preventive maintenance',
@@ -39,6 +40,7 @@ export const SERVICES = [
         description:
             'Expert installation and start-up services to ensure seamless power plant operations.',
         icon: 'Settings',
+        image: '/images/services/erection-commissioning.png',
         features: [
             'Professional installation',
             'System integration',
@@ -52,6 +54,7 @@ export const SERVICES = [
         description:
             'Supplying high-quality spare parts to ensure continuous and efficient power plant operation.',
         icon: 'Package',
+        image: '/images/services/power-plant-spares.png',
         features: [
             'OEM quality parts',
             'Fast delivery',
@@ -65,6 +68,7 @@ export const SERVICES = [
         description:
             'Reliable troubleshooting to keep your power plant running without a hitch.',
         icon: 'Wrench',
+        image: '/images/services/troubleshooting.png',
         features: [
             'Rapid diagnostics',
             '24/7 support',
@@ -80,35 +84,35 @@ export const PRODUCTS = [
         name: 'Stator Coil',
         category: 'Generator Components',
         description: 'High-performance stator coils for reliable power generation.',
-        image: '/images/products/stator-coil.jpg',
+        image: '/images/products/stator-coil.png',
     },
     {
         id: 'generator-slip-ring',
         name: 'Generator Slip Ring',
         category: 'Generator Components',
         description: 'Premium quality slip rings for smooth power transmission.',
-        image: '/images/products/slip-ring.jpg',
+        image: '/images/products/slip-ring.png',
     },
     {
         id: 'turbine-blades',
         name: 'Turbine Blades',
         category: 'Turbine Components',
         description: 'Precision-engineered turbine blades for optimal efficiency.',
-        image: '/images/products/turbine-blades.jpg',
+        image: '/images/products/turbine-blades.png',
     },
     {
         id: 'generator-rotor',
         name: 'Generator Rotor',
         category: 'Generator Components',
         description: 'Robust generator rotors built for long-term performance.',
-        image: '/images/products/generator-rotor.jpg',
+        image: '/images/products/generator-rotor.png',
     },
     {
         id: 'turbine-rotor',
         name: 'Turbine Rotor',
         category: 'Turbine Components',
         description: 'High-strength turbine rotors for demanding applications.',
-        image: '/images/products/turbine-rotor.jpg',
+        image: '/images/products/turbine-rotor.png',
     },
 ];
 

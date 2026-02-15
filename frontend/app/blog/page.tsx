@@ -92,14 +92,19 @@ export default function BlogPage() {
               {filteredPosts.map((post, index) => (
                 <RevealOnScroll key={post.id} variant="slideUp" delay={index * 0.1}>
                   <article className="bg-white rounded-xl shadow-lg border border-steel-light/20 overflow-hidden hover:shadow-xl transition-all duration-300 group">
-                    <div className="aspect-video bg-gradient-to-br from-navy-dark to-navy-medium flex items-center justify-center relative overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    <div className="aspect-video relative overflow-hidden">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
                       <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                        <span className="inline-block bg-industrial-orange text-white text-sm px-3 py-1 rounded-full">
+                        <span className="inline-block bg-industrial-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                           {post.category}
                         </span>
                         {post.featured && (
-                          <span className="inline-block bg-electric-blue text-white text-sm px-3 py-1 rounded-full">
+                          <span className="inline-block bg-electric-blue text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                             Featured
                           </span>
                         )}

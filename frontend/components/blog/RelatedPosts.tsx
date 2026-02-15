@@ -17,10 +17,15 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
           href={`/blog/${post.slug}`}
           className="group bg-white rounded-xl shadow-lg border border-steel-light/20 overflow-hidden hover:shadow-xl transition-all duration-300"
         >
-          <div className="aspect-video bg-gradient-to-br from-navy-dark to-navy-medium flex items-center justify-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+          <div className="aspect-video relative overflow-hidden">
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
             <div className="absolute bottom-3 left-3">
-              <span className="inline-block bg-industrial-orange text-white text-xs px-3 py-1 rounded-full">
+              <span className="inline-block bg-industrial-orange text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
                 {post.category}
               </span>
             </div>

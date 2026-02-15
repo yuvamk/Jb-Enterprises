@@ -4,9 +4,9 @@ import { BlogPost as BlogPostType } from '@/lib/blogData';
 import RevealOnScroll from '@/components/ui/RevealOnScroll';
 import { Calendar, User, Clock, ArrowLeft, Share2, Tag } from 'lucide-react';
 import Link from 'next/link';
-import AuthorBio from './AuthorBio';
-import RelatedPosts from './RelatedPosts';
-import ShareButtons from './ShareButtons';
+import AuthorBio from '@/components/blog/AuthorBio';
+import RelatedPosts from '@/components/blog/RelatedPosts';
+import ShareButtons from '@/components/blog/ShareButtons';
 
 interface BlogPostProps {
   post: BlogPostType;
@@ -30,28 +30,40 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
       </section>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-navy-dark via-navy-medium to-navy-dark text-white py-16">
-        <div className="container-custom max-w-4xl">
+      <section className="relative bg-navy-dark text-white py-24 md:py-32 overflow-hidden">
+        {/* Feature Image Background */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={post.image}
+            alt={post.title}
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/80 to-transparent" />
+        </div>
+
+        <div className="container-custom max-w-4xl relative z-10">
           <RevealOnScroll variant="fade">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="inline-block bg-industrial-orange text-white text-sm px-4 py-2 rounded-full">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="inline-block bg-industrial-orange text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
                 {post.category}
               </span>
               {post.featured && (
-                <span className="inline-block bg-electric-blue text-white text-sm px-4 py-2 rounded-full">
+                <span className="inline-block bg-electric-blue text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
                   Featured
                 </span>
               )}
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">{post.title}</h1>
-            <div className="flex items-center gap-6 text-off-white/90 flex-wrap">
-              <div className="flex items-center gap-2">
-                <User className="w-5 h-5" />
-                <span>{post.author.name}</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">{post.title}</h1>
+            <div className="flex items-center gap-8 text-off-white/80 flex-wrap">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full overflow-hidden border border-white/20">
+                  <img src={post.author.avatar} alt={post.author.name} className="w-full h-full object-cover" />
+                </div>
+                <span className="font-medium text-white">{post.author.name}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar className="w-5 h-5" />
-                <span>
+                <Calendar className="w-5 h-5 text-industrial-orange" />
+                <span className="text-sm">
                   {new Date(post.date).toLocaleDateString('en-US', {
                     month: 'long',
                     day: 'numeric',
@@ -60,8 +72,8 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5" />
-                <span>{post.readingTime} min read</span>
+                <Clock className="w-5 h-5 text-industrial-orange" />
+                <span className="text-sm">{post.readingTime} min read</span>
               </div>
             </div>
           </RevealOnScroll>

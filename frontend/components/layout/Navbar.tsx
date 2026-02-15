@@ -15,6 +15,12 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  // Pages that have a dark hero and need transparent-to-white transition
+  const isHomePage = pathname === '/';
+  
+  // If not on home page, we should show the background or at least dark text
+  const forceDark = !isHomePage;
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -24,13 +30,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Final visual state
+  const showBackground = isScrolled || forceDark;
+  const isDarkText = showBackground; // Navy text when background is visible
+  const isWhiteText = !isDarkText;
+
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        showBackground
           ? 'bg-white/95 backdrop-blur-lg shadow-lg'
           : 'bg-transparent'
       }`}
@@ -39,17 +50,21 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-electric-blue rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-industrial-orange rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">JB</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-xl text-navy-dark">
+              <span className={`font-bold text-xl transition-colors duration-300 ${
+                isDarkText ? 'text-navy-dark' : 'text-white'
+              }`}>
                 {SITE_CONFIG.name}
               </span>
-              <span className="text-xs text-steel-grey">Power Solutions</span>
+              <span className={`text-xs transition-colors duration-300 ${
+                isDarkText ? 'text-steel-grey' : 'text-white/80'
+              }`}>Power Solutions</span>
             </div>
           </Link>
-
+ 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map((link) => {
@@ -61,6 +76,7 @@ export default function Navbar() {
                     label={link.label}
                     items={SERVICES_MEGA_MENU}
                     columns={2}
+                    dark={isWhiteText}
                   />
                 );
               }
@@ -71,6 +87,7 @@ export default function Navbar() {
                     label={link.label}
                     items={PRODUCTS_MEGA_MENU}
                     columns={2}
+                    dark={isWhiteText}
                   />
                 );
               }
@@ -81,13 +98,15 @@ export default function Navbar() {
                   href={link.href}
                   className={`text-sm font-medium transition-colors duration-200 relative group ${
                     pathname === link.href
-                      ? 'text-electric-blue'
-                      : 'text-navy-dark hover:text-electric-blue'
+                      ? 'text-industrial-orange'
+                      : isDarkText 
+                        ? 'text-navy-dark hover:text-industrial-orange' 
+                        : 'text-white hover:text-industrial-orange'
                   }`}
                 >
                   {link.label}
                   <span
-                    className={`absolute -bottom-1 left-0 h-0.5 bg-electric-blue transition-all duration-300 ${
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-industrial-orange transition-all duration-300 ${
                       pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'
                     }`}
                   />
@@ -96,13 +115,15 @@ export default function Navbar() {
             })}
             
             {/* Search Bar */}
-            <SearchBar />
+            <SearchBar dark={isWhiteText} />
           </div>
-
+ 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-navy-dark hover:text-electric-blue transition-colors"
+            className={`md:hidden p-2 transition-colors ${
+              isDarkText ? 'text-navy-dark' : 'text-white'
+            }`}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

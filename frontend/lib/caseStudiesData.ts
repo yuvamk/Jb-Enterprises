@@ -6,6 +6,7 @@ export interface CaseStudy {
     industry: string;
     challenge: string;
     solution: string;
+    image: string;
     results: {
         metric: string;
         value: string;
@@ -29,6 +30,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         industry: 'Thermal Power Generation',
         challenge: 'A 500MW coal-fired thermal power plant was experiencing declining efficiency, frequent unplanned outages, and increasing maintenance costs. The plant\'s heat rate had deteriorated from 2,350 kcal/kWh to 2,650 kcal/kWh over 10 years, resulting in significant fuel cost increases and reduced competitiveness in the power market.',
         solution: 'JB Enterprise conducted a comprehensive plant assessment and implemented a multi-phase modernization program including: turbine blade replacement with advanced aerodynamic designs, generator stator rewinding, boiler tube replacement in critical sections, control system upgrade to DCS, implementation of predictive maintenance systems with vibration monitoring and thermography, and combustion optimization with oxygen trim control.',
+        image: '/images/case-studies/efficiency-improvement.png',
         results: [
             {
                 metric: 'Heat Rate Improvement',
@@ -72,6 +74,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         industry: 'Gas-fired Power Generation',
         challenge: 'Installation and commissioning of a new 250MW combined cycle gas turbine (CCGT) plant with an aggressive 14-month timeline. The project involved complex coordination between multiple OEMs, strict safety requirements, and the need to achieve guaranteed performance parameters on first fire.',
         solution: 'JB Enterprise provided turnkey erection and commissioning services with a dedicated team of 150+ specialists. Our approach included: detailed engineering review and site preparation, phased installation of gas turbine, HRSG, and steam turbine, comprehensive quality control with documented inspection points, parallel commissioning activities to optimize schedule, extensive pre-commissioning checks and system flushing, coordinated first fire and synchronization, and performance testing to verify guarantees.',
+        image: '/images/case-studies/installation.png',
         results: [
             {
                 metric: 'Project Completion',
@@ -115,6 +118,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         industry: 'Multi-site Power Generation',
         challenge: 'A major power producer operating 12 thermal power plants (total 6,000MW capacity) was facing challenges with spare parts management: long lead times (6-12 months) for critical components, high inventory carrying costs, lack of standardization across plants, and frequent emergency procurements at premium prices.',
         solution: 'JB Enterprise implemented a comprehensive spare parts management program: conducted criticality analysis of all components, established strategic inventory at central warehouse, negotiated framework agreements with OEMs and qualified suppliers, implemented just-in-time delivery for non-critical items, created standardized specifications for common parts, and provided 24/7 emergency support with guaranteed delivery times.',
+        image: '/images/services/power-plant-spares.png',
         results: [
             {
                 metric: 'Delivery Time Reduction',
@@ -158,6 +162,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         industry: 'Coal-fired Power Generation',
         challenge: 'A 300MW coal-fired unit experienced sudden high vibration levels on the turbine-generator set, forcing an emergency shutdown. Initial investigations by plant personnel could not identify the root cause. Each day of downtime was costing $500,000 in lost revenue and replacement power costs.',
         solution: 'JB Enterprise deployed a rapid response team within 8 hours of the call. Our approach included: comprehensive vibration analysis using FFT and orbit plots, detailed inspection of bearings, couplings, and foundations, laser alignment verification of turbine-generator set, oil analysis for contamination and bearing wear, thermal imaging to detect hot spots, and root cause analysis using advanced diagnostics. The team identified misalignment caused by foundation settlement and bearing wear.',
+        image: '/images/services/troubleshooting.png',
         results: [
             {
                 metric: 'Problem Identification',

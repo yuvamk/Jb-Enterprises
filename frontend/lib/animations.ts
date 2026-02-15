@@ -90,14 +90,14 @@ export const parallax = {
 };
 
 // Hover Lift Effect (for cards)
-export const hoverLift = {
+export const hoverLift: Variants = {
   rest: { y: 0, scale: 1 },
   hover: {
     y: -8,
     scale: 1.02,
     transition: {
       duration: 0.3,
-      ease: 'easeOut',
+      ease: 'easeOut' as any,
     },
   },
 };

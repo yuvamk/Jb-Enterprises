@@ -38,7 +38,7 @@ export const PRODUCTS_MEGA_MENU = [
 ];
 
 function getServiceIcon(iconName: string) {
-  const icons: Record<string, JSX.Element> = {
+  const icons: Record<string, React.ReactElement> = {
     Zap: <Zap className="w-6 h-6" />,
     Settings: <Settings className="w-6 h-6" />,
     Package: <Package className="w-6 h-6" />,

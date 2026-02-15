@@ -31,9 +31,9 @@ export const PRODUCT_DETAILS: ProductDetail[] = [
         description: 'Premium quality stator coils for generators up to 500MW capacity',
         longDescription:
             'Our high voltage stator coils are engineered to the highest standards for reliability and performance in large-scale power generation applications. Manufactured using premium copper conductors and advanced insulation systems, these coils deliver exceptional electrical and thermal performance. Each coil undergoes rigorous testing including partial discharge, high voltage, and thermal cycling tests to ensure long-term reliability.',
-        image: '/Users/yuvamrajput/.gemini/antigravity/brain/8f156dc0-538f-49a2-9675-35084b7357da/stator_coil_product_1771153859597.png',
+        image: '/images/products/stator-coil.png',
         gallery: [
-            '/Users/yuvamrajput/.gemini/antigravity/brain/8f156dc0-538f-49a2-9675-35084b7357da/stator_coil_product_1771153859597.png',
+            '/images/products/stator-coil.png',
         ],
         specifications: [
             { label: 'Voltage Rating', value: 'Up to 22kV' },
@@ -83,9 +83,9 @@ export const PRODUCT_DETAILS: ProductDetail[] = [
         description: 'High-performance slip ring assemblies for reliable power transmission',
         longDescription:
             'Our precision slip ring assemblies are designed for continuous, reliable power transmission in rotating machinery. Featuring high-grade copper alloy rings and advanced carbon brush technology, these assemblies ensure minimal electrical noise and maximum service life. Each unit is precision-machined and balanced for smooth operation at high speeds.',
-        image: '/Users/yuvamrajput/.gemini/antigravity/brain/8f156dc0-538f-49a2-9675-35084b7357da/slip_ring_assembly_1771153875211.png',
+        image: '/images/products/slip-ring.png',
         gallery: [
-            '/Users/yuvamrajput/.gemini/antigravity/brain/8f156dc0-538f-49a2-9675-35084b7357da/slip_ring_assembly_1771153875211.png',
+            '/images/products/slip-ring.png',
         ],
         specifications: [
             { label: 'Ring Material', value: 'Copper Alloy (CuCrZr)' },
@@ -133,8 +133,8 @@ export const PRODUCT_DETAILS: ProductDetail[] = [
         description: 'High-efficiency turbine blades for steam turbines',
         longDescription:
             'Our steam turbine blades are engineered for maximum efficiency and durability in high-temperature, high-pressure environments. Manufactured from premium alloy steel with advanced aerodynamic profiles, these blades deliver superior performance and extended service life. Each blade is individually inspected and balanced for optimal turbine operation.',
-        image: '/images/products/turbine-blade.jpg',
-        gallery: ['/images/products/turbine-blade.jpg'],
+        image: '/images/products/turbine-blades.png',
+        gallery: ['/images/products/turbine-blades.png'],
         specifications: [
             { label: 'Material', value: '12Cr Stainless Steel / Titanium Alloy' },
             { label: 'Blade Length', value: '200-800mm (stage dependent)' },
@@ -181,8 +181,8 @@ export const PRODUCT_DETAILS: ProductDetail[] = [
         description: 'Complete rotor assemblies for synchronous generators',
         longDescription:
             'Our generator rotor assemblies are precision-engineered for reliable, efficient power generation. Each rotor is manufactured from high-grade forged steel and features advanced winding technology for optimal magnetic field distribution. Complete with balancing, testing, and quality certification, our rotors are ready for immediate installation.',
-        image: '/images/products/generator-rotor.jpg',
-        gallery: ['/images/products/generator-rotor.jpg'],
+        image: '/images/products/generator-rotor.png',
+        gallery: ['/images/products/generator-rotor.png'],
         specifications: [
             { label: 'Rotor Type', value: 'Salient Pole / Cylindrical' },
             { label: 'Material', value: 'Forged Steel (34CrNiMo6)' },

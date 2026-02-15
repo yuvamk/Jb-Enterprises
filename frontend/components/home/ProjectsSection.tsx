@@ -38,8 +38,12 @@ export default function ProjectsSection() {
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.3 }}
               >
-                {/* Placeholder Image Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-steel-grey to-navy-medium" />
+                {/* Product Image */}
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
                 
                 {/* Overlay */}
                 <div

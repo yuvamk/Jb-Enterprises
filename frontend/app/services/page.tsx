@@ -25,25 +25,36 @@ export default function ServicesPage() {
     label: service.title,
     icon: getServiceIcon(service.icon),
     content: (
-      <div className="bg-white p-8 rounded-xl shadow-lg border border-steel-light/20">
-        <h3 className="text-3xl font-bold text-navy-dark mb-4">{service.title}</h3>
-        <p className="text-lg text-steel-grey mb-6">{service.description}</p>
-        
-        <h4 className="text-xl font-semibold text-navy-dark mb-4">Key Features</h4>
-        <ul className="space-y-3 mb-8">
-          {service.features.map((feature, index) => (
-            <li key={index} className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-industrial-orange flex-shrink-0 mt-1" />
-              <span className="text-steel-grey">{feature}</span>
-            </li>
-          ))}
-        </ul>
+      <div className="bg-white p-0 rounded-xl shadow-lg border border-steel-light/20 overflow-hidden">
+        <div className="h-64 relative">
+          <img 
+            src={service.image} 
+            alt={service.title} 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+            <h3 className="text-3xl font-bold text-white">{service.title}</h3>
+          </div>
+        </div>
+        <div className="p-8">
+          <p className="text-lg text-steel-grey mb-6">{service.description}</p>
+          
+          <h4 className="text-xl font-semibold text-navy-dark mb-4">Key Features</h4>
+          <ul className="space-y-3 mb-8">
+            {service.features.map((feature, index) => (
+              <li key={index} className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-industrial-orange flex-shrink-0 mt-1" />
+                <span className="text-steel-grey">{feature}</span>
+              </li>
+            ))}
+          </ul>
 
-        <div className="bg-off-white p-6 rounded-lg">
-          <h4 className="text-lg font-semibold text-navy-dark mb-3">Why Choose This Service?</h4>
-          <p className="text-steel-grey">
-            Our {service.title.toLowerCase()} solutions are designed to maximize efficiency, minimize downtime, and ensure long-term reliability. With our experienced team and global vendor network, we deliver results that exceed expectations.
-          </p>
+          <div className="bg-off-white p-6 rounded-lg">
+            <h4 className="text-lg font-semibold text-navy-dark mb-3">Why Choose This Service?</h4>
+            <p className="text-steel-grey">
+              Our {service.title.toLowerCase()} solutions are designed to maximize efficiency, minimize downtime, and ensure long-term reliability. With our experienced team and global vendor network, we deliver results that exceed expectations.
+            </p>
+          </div>
         </div>
       </div>
     ),

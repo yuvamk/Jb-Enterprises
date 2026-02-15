@@ -3,16 +3,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Placeholder client logos - replace with actual logos
-const clients = [
-  'Client 1',
-  'Client 2',
-  'Client 3',
-  'Client 4',
-  'Client 5',
-  'Client 6',
-  'Client 7',
-  'Client 8',
+interface Client {
+  name: string;
+  logo: string;
+}
+
+const clients: Client[] = [
+  { name: 'PowerGen Systems', logo: '/images/clients/powergen.png' },
+  { name: 'Global Turbine', logo: '/images/clients/global-turbine.png' },
+  { name: 'EcoPower Dynamics', logo: '/images/clients/ecopower.png' },
+  { name: 'Precision Parts Ltd', logo: '/images/clients/precision-parts.png' },
+  { name: 'Energy Flow Corp', logo: '/images/clients/powergen.png' }, // Reusing logos for infinite scroll variety
+  { name: 'Industrial Masters', logo: '/images/clients/global-turbine.png' },
+  { name: 'Power Grid Solutions', logo: '/images/clients/ecopower.png' },
+  { name: 'Mega Watt Tech', logo: '/images/clients/precision-parts.png' },
 ];
 
 export default function ClientsSection() {
@@ -34,18 +38,28 @@ export default function ClientsSection() {
           {clients.map((client, index) => (
             <div
               key={`first-${index}`}
-              className="flex-shrink-0 w-48 h-24 bg-white rounded-lg shadow-md flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
+              className="flex-shrink-0 w-48 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer border border-steel-light/10"
             >
-              <span className="text-steel-grey font-semibold">{client}</span>
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="max-w-full max-h-full object-contain"
+                title={client.name}
+              />
             </div>
           ))}
           {/* Duplicate set for seamless loop */}
           {clients.map((client, index) => (
             <div
               key={`second-${index}`}
-              className="flex-shrink-0 w-48 h-24 bg-white rounded-lg shadow-md flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
+              className="flex-shrink-0 w-48 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer border border-steel-light/10"
             >
-              <span className="text-steel-grey font-semibold">{client}</span>
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="max-w-full max-h-full object-contain"
+                title={client.name}
+              />
             </div>
           ))}
         </div>
